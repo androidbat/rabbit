@@ -21,7 +21,7 @@ import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.FrameLayout;
 import android.widget.ListAdapter;
-import com.m.rat.R;
+import com.m.rabbit.R;
 
 @SuppressLint("WrongCall")
 public class SwipeLayout extends FrameLayout {

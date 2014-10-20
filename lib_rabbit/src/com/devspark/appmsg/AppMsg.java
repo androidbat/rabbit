@@ -29,7 +29,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
-import com.m.rat.R;
+import com.m.rabbit.R;
 
 /**
  * In-layout notifications. Based on {@link android.widget.Toast} notifications
