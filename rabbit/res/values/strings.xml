@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">兔子</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- arrow -->
+  <string name="content_hint">Content</string>
+  <string name="drawer_hint">Drawer</string>
+  <string name="rounded">See Rounded</string>
+  <string name="squared">See Squared</string>
+</resources>

@@ -1,0 +1,19 @@
+<resources>
+
+    <string name="app_name">lib_rat</string>
+    <string name="pull_to_refresh">下拉刷新</string>
+	<string name="release_to_refresh">释放刷新</string>
+	
+	<string name="refreshing">正在刷新…</string>
+	<string name="not_updated_yet">暂未更新过</string>
+	<string name="updated_at">上次更新:%1$s</string>
+	<string name="updated_just_now">刚刚更新</string>
+	<string name="time_error">时间有问题</string>
+	
+	<string name="load_full">已加载全部</string>
+	<string name="load_failed">加载失败,点击重试</string>
+    <string name="no_data">暂无数据</string>
+    <string name="more_loading">更多加载中...</string>
+    <string name="release_to_load">释放加载更多</string>
+
+</resources>

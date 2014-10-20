@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.mm.rabbit"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="19" />
+    
+     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.mm.rabbit.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        
+         <activity android:name="com.flavienlaurent.vdh.DragMainActivity"></activity>
+         <activity android:name="com.flavienlaurent.vdh.DragActivity"/>
+         <activity android:name="com.flavienlaurent.vdh.YoutubeActivity"/>
+        
+        <activity
+            android:name="com.mm.rabbit.MainActivity1"
+            >
+        </activity>
+        <activity
+            android:name="com.mm.rabbit.MainActivity2"
+            >
+        </activity>
+        
+        <activity
+            android:name="com.daimajia.swipedemo.MyActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity android:name="com.daimajia.swipedemo.ListViewExample"/>
+        <activity android:name="com.daimajia.swipedemo.GridViewExample"/>
+        <activity android:name=".NestedExample"/>
+        
+        <activity
+                android:name="com.devspark.appmsg.sample.AppMsgActivity"
+                android:windowSoftInputMode="stateVisible|adjustResize"
+                android:label="App Msg"/>
+ 	<activity
+            android:name="chrisrenke.drawerarrowdrawable.DrawerArrowSample"
+            android:label="Drawerarrow"/>
+        
+        <!-- nineoldanroid  -->
+        <activity
+            android:label="Nine Old Androids"
+            android:name="com.jakewharton.nineoldandroids.sample.Demos">
+        </activity>
+        <activity android:name="com.jakewharton.nineoldandroids.sample.Toggles"
+            		android:label="Toggles"/>
+        <activity
+            android:name="com.jakewharton.nineoldandroids.sample.VPADemo"
+            android:label="ViewPropertyAnimator Demo"/>
+        <activity
+            android:name="com.jakewharton.nineoldandroids.sample.apidemos.AnimationCloning"
+            android:label="API Demos/Animation Cloning"/>
+        <activity
+            android:name="com.jakewharton.nineoldandroids.sample.apidemos.AnimationLoading"
+            android:label="API Demos/Animation Loading"/>
+        <activity
+            android:name="com.jakewharton.nineoldandroids.sample.apidemos.AnimationSeeking"
+            android:label="API Demos/Animation Seeking"/>
+        <activity
+            android:name="com.jakewharton.nineoldandroids.sample.apidemos.AnimatorEvents"
+            android:label="API Demos/Animator Events"/>
+        <activity
+            android:name="com.jakewharton.nineoldandroids.sample.apidemos.BouncingBalls"
+            android:label="API Demos/Bouncing Balls"/>
+        <activity
+            android:name="com.jakewharton.nineoldandroids.sample.apidemos.CustomEvaluator"
+            android:label="API Demos/Custom Evaluator"/>
+        <activity
+            android:name="com.jakewharton.nineoldandroids.sample.apidemos.MultiPropertyAnimation"
+            android:label="API Demos/Multi-Property Animation">
+        </activity>
+        <activity
+            android:name="com.jakewharton.nineoldandroids.sample.apidemos.ReversingAnimation"
+            android:label="API Demos/Reversing Animation">
+        </activity>
+        <activity
+            android:name="com.jakewharton.nineoldandroids.sample.droidflakes.Droidflakes"
+            android:label="Droid Flakes">
+        </activity>
+        <activity
+            android:name="com.jakewharton.nineoldandroids.sample.pathanimation.PathAnimationActivity"
+            android:label="Path Animation">
+        </activity>
+        <!-- nineoldanroid  end-->
+        
+        
+    </application>
+
+</manifest>
