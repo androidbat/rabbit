@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <color name="custom">#ff0099CC</color>
+    <color name="custom">#000000</color>
+    <!-- #ff0099CC -->
     <color name="sticky">#ffffcd5a</color>
 
 </resources>

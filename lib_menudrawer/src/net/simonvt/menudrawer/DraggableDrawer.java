@@ -1,5 +1,6 @@
 package net.simonvt.menudrawer;
 
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Build;
@@ -14,6 +15,7 @@ import android.view.ViewConfiguration;
 import android.view.ViewGroup;
 import android.view.animation.Interpolator;
 
+@TargetApi(Build.VERSION_CODES.JELLY_BEAN)
 public abstract class DraggableDrawer extends MenuDrawer {
 
     /**

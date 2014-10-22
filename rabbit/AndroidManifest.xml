@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.mm.rabbit"
+    package="com.m.rabbit"
     android:versionCode="1"
     android:versionName="1.0" >
 
@@ -20,7 +20,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.mm.rabbit.MainActivity"
+            android:name="com.m.rabbit.MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -30,18 +30,34 @@
         </activity>
         
         
-         <activity android:name="com.flavienlaurent.vdh.DragMainActivity"></activity>
-         <activity android:name="com.flavienlaurent.vdh.DragActivity"/>
-         <activity android:name="com.flavienlaurent.vdh.YoutubeActivity"/>
+         <activity android:name="com.example.drag.DragMainActivity"></activity>
+         <activity android:name="com.example.drag.DragActivity"/>
+         <activity android:name="com.example.drag.YoutubeActivity"/>
         
         <activity
-            android:name="com.mm.rabbit.MainActivity1"
+            android:name="com.m.rabbit.Scroller"
             >
         </activity>
         <activity
-            android:name="com.mm.rabbit.MainActivity2"
+            android:name="com.m.rabbit.MainActivity2"
             >
         </activity>
+        
+        <activity
+            android:name="com.example.materialdialog.MyActivity"
+            android:label="Material_Dialog" />
+        
+        <activity
+            android:name="com.gitonway.lee.niftymodaldialogeffects.MainActivity"
+            android:label="Nifty_Dialog_Effect" />
+            
+        <activity
+			android:name="com.example.styleddialog.MyActivity"
+			android:label="Styled_Dialog"/>
+        
+        <activity
+            android:name="com.example.messagebar.SampleActivity"
+            android:label="MessageBar"/>
         
         <activity
             android:name="com.daimajia.swipedemo.MyActivity"
@@ -49,14 +65,14 @@
         </activity>
         <activity android:name="com.daimajia.swipedemo.ListViewExample"/>
         <activity android:name="com.daimajia.swipedemo.GridViewExample"/>
-        <activity android:name=".NestedExample"/>
+        <activity android:name="com.m.rabbit.NestedExample"/>
         
         <activity
-                android:name="com.devspark.appmsg.sample.AppMsgActivity"
+                android:name="com.example.appmsg.AppMsgActivity"
                 android:windowSoftInputMode="stateVisible|adjustResize"
                 android:label="App Msg"/>
  	<activity
-            android:name="chrisrenke.drawerarrowdrawable.DrawerArrowSample"
+            android:name="com.example.drawerarrowdrawable.DrawerArrowSample"
             android:label="Drawerarrow"/>
         
         <!-- nineoldanroid  -->

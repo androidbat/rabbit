@@ -66,6 +66,7 @@ class ColorDrawable extends Drawable {
             mPaint.setColor(mState.mUseColor);
             canvas.drawRect(getBounds(), mPaint);
         }
+        
     }
 
     /**

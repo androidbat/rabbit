@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <net.simonvt.menudrawer.OverlayDrawer2 
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+	    android:id="@+id/drawer"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    app:mdPosition="left"
+	    app:mdMenuSize="100dp"
+	    >
+        
+         <LinearLayout
+            android:id="@+id/mdMenu"
+            android:background="#FF5534"
+            android:tag="Bottom3"
+            android:gravity="center"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/del_swipe"
+                android:text="删除"
+                android:textSize="17sp"
+                android:textColor="#fff"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            </LinearLayout>
+	<!-- <include layout="@layout/tralley_goods_item_top"/> -->
+    </net.simonvt.menudrawer.OverlayDrawer2>

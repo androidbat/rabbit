@@ -11,7 +11,7 @@
             android:tag="list"
             />
 
-    <com.flavienlaurent.vdh.YoutubeLayout
+    <com.example.drag.YoutubeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/dragLayout"
@@ -40,5 +40,5 @@
                 android:layout_height="match_parent"
                 android:background="#FF00FF"/>
 
-    </com.flavienlaurent.vdh.YoutubeLayout>
+    </com.example.drag.YoutubeLayout>
 </FrameLayout>

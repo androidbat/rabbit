@@ -1,6 +1,5 @@
 <resources>
 
-    <string name="app_name">Android-AppMsg</string>
     <string name="alert">Alert</string>
     <string name="confirm">Confirm</string>
     <string name="info">Info</string>
