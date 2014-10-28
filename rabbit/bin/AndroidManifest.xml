@@ -7,12 +7,12 @@
     <uses-sdk
         android:minSdkVersion="8"
         android:targetSdkVersion="19" />
-    
-     <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -28,100 +28,225 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        
-        
-         <activity android:name="com.example.drag.DragMainActivity"></activity>
-         <activity android:name="com.example.drag.DragActivity"/>
-         <activity android:name="com.example.drag.YoutubeActivity"/>
-        
         <activity
-            android:name="com.m.rabbit.Scroller"
-            >
+            android:name="com.example.drag.DragMainActivity"
+            android:label="DragLayout" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.m.rabbit.example" />
+            </intent-filter>
         </activity>
-        <activity
-            android:name="com.m.rabbit.MainActivity2"
-            >
+        <activity android:name="com.example.drag.DragActivity" >
         </activity>
-        
+        <activity android:name="com.example.drag.YoutubeActivity" >
+        </activity>
+        <activity android:name="com.m.rabbit.Scroller" >
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="com.m.rabbit.example" />
+        </activity>
+        <activity android:name="com.m.rabbit.MainActivity2" >
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="com.m.rabbit.example" />
+        </activity>
         <activity
             android:name="com.example.materialdialog.MyActivity"
-            android:label="Material_Dialog" />
-        
+            android:label="Material_Dialog" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.m.rabbit.example" />
+            </intent-filter>
+        </activity>
         <activity
             android:name="com.gitonway.lee.niftymodaldialogeffects.MainActivity"
-            android:label="Nifty_Dialog_Effect" />
-            
+            android:label="Nifty_Dialog_Effect" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.m.rabbit.example" />
+            </intent-filter>
+        </activity>
         <activity
-			android:name="com.example.styleddialog.MyActivity"
-			android:label="Styled_Dialog"/>
-        
+            android:name="com.example.styleddialog.MyActivity"
+            android:label="Styled_Dialog" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.m.rabbit.example" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.example.messagebar.SampleActivity" />
         <activity
-            android:name="com.example.messagebar.SampleActivity"
-            android:label="MessageBar"/>
-        
+            android:name="com.todddavies.components.progressbar.ProgressBar"
+            android:label="ProgressBar_Draw" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.m.rabbit.example" />
+            </intent-filter>
+        </activity>
         <activity
             android:name="com.daimajia.swipedemo.MyActivity"
-            android:label="@string/app_name" >
+            android:label="Swipe/Layout" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.m.rabbit.example" />
+            </intent-filter>
         </activity>
-        <activity android:name="com.daimajia.swipedemo.ListViewExample"/>
-        <activity android:name="com.daimajia.swipedemo.GridViewExample"/>
-        <activity android:name="com.m.rabbit.NestedExample"/>
-        
         <activity
-                android:name="com.example.appmsg.AppMsgActivity"
-                android:windowSoftInputMode="stateVisible|adjustResize"
-                android:label="App Msg"/>
- 	<activity
+            android:name="com.daimajia.swipedemo.ListViewExample"
+            android:label="Swipe/ListViewExample" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.m.rabbit.example" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.daimajia.swipedemo.GridViewExample"
+            android:label="Swipe/GridViewExample" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.m.rabbit.example" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.appmsg.AppMsgActivity"
+            android:label="App_Msg" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.m.rabbit.example" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name="com.example.drawerarrowdrawable.DrawerArrowSample"
-            android:label="Drawerarrow"/>
-        
-        <!-- nineoldanroid  -->
-        <activity
-            android:label="Nine Old Androids"
-            android:name="com.jakewharton.nineoldandroids.sample.Demos">
+            android:label="Drawerarrow" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.m.rabbit.example" />
+            </intent-filter>
         </activity>
-        <activity android:name="com.jakewharton.nineoldandroids.sample.Toggles"
-            		android:label="Toggles"/>
+
+        <!-- nineoldanroid -->
+        <activity
+            android:name="com.jakewharton.nineoldandroids.sample.Demos"
+            android:label="Nine Old Androids" >
+        </activity>
+        <activity
+            android:name="com.jakewharton.nineoldandroids.sample.Toggles"
+            android:label="NineoldAndroids/Toggles" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.m.rabbit.example" />
+            </intent-filter>
+        </activity>
         <activity
             android:name="com.jakewharton.nineoldandroids.sample.VPADemo"
-            android:label="ViewPropertyAnimator Demo"/>
+            android:label="NineoldAndroids/ViewPropertyAnimator" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.m.rabbit.example" />
+            </intent-filter>
+        </activity>
         <activity
             android:name="com.jakewharton.nineoldandroids.sample.apidemos.AnimationCloning"
-            android:label="API Demos/Animation Cloning"/>
+            android:label="NineoldAndroids/Cloning" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.m.rabbit.example" />
+            </intent-filter>
+        </activity>
         <activity
             android:name="com.jakewharton.nineoldandroids.sample.apidemos.AnimationLoading"
-            android:label="API Demos/Animation Loading"/>
+            android:label="NineoldAndroids/Loading" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.m.rabbit.example" />
+            </intent-filter>
+        </activity>
         <activity
             android:name="com.jakewharton.nineoldandroids.sample.apidemos.AnimationSeeking"
-            android:label="API Demos/Animation Seeking"/>
+            android:label="NineoldAndroids/Seeking" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.m.rabbit.example" />
+            </intent-filter>
+        </activity>
         <activity
             android:name="com.jakewharton.nineoldandroids.sample.apidemos.AnimatorEvents"
-            android:label="API Demos/Animator Events"/>
+            android:label="NineoldAndroids/Events" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.m.rabbit.example" />
+            </intent-filter>
+        </activity>
         <activity
             android:name="com.jakewharton.nineoldandroids.sample.apidemos.BouncingBalls"
-            android:label="API Demos/Bouncing Balls"/>
+            android:label="NineoldAndroids/BouncingBalls" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.m.rabbit.example" />
+            </intent-filter>
+        </activity>
         <activity
             android:name="com.jakewharton.nineoldandroids.sample.apidemos.CustomEvaluator"
-            android:label="API Demos/Custom Evaluator"/>
+            android:label="NineoldAndroids/CustomEvaluator" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.m.rabbit.example" />
+            </intent-filter>
+        </activity>
         <activity
             android:name="com.jakewharton.nineoldandroids.sample.apidemos.MultiPropertyAnimation"
-            android:label="API Demos/Multi-Property Animation">
+            android:label="NineoldAndroids/MultiPropertyAnimation" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.m.rabbit.example" />
+            </intent-filter>
         </activity>
         <activity
             android:name="com.jakewharton.nineoldandroids.sample.apidemos.ReversingAnimation"
-            android:label="API Demos/Reversing Animation">
+            android:label="NineoldAndroids/ReversingAnimation" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.m.rabbit.example" />
+            </intent-filter>
         </activity>
         <activity
             android:name="com.jakewharton.nineoldandroids.sample.droidflakes.Droidflakes"
-            android:label="Droid Flakes">
+            android:label="NineoldAndroids/Droidflakes" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.m.rabbit.example" />
+            </intent-filter>
         </activity>
         <activity
             android:name="com.jakewharton.nineoldandroids.sample.pathanimation.PathAnimationActivity"
-            android:label="Path Animation">
+            android:label="NineoldAndroids/PathAnimation" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.m.rabbit.example" />
+            </intent-filter>
         </activity>
-        <!-- nineoldanroid  end-->
-        
-        
+        <!-- nineoldanroid  end -->
+
     </application>
 
 </manifest>

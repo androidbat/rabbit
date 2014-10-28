@@ -1,11 +1,16 @@
 package com.m.rabbit;
 
+import java.text.Collator;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBar;
@@ -26,11 +31,10 @@ import com.example.drawerarrowdrawable.DrawerArrowSample;
 import com.example.messagebar.SampleActivity;
 import com.example.styleddialog.MyActivity;
 import com.jakewharton.nineoldandroids.sample.Demos;
+import com.todddavies.components.progressbar.ProgressBar;
 
 public class MainActivity extends ActionBarActivity implements TabListener {
 	private ActionBar mActionBar;
-	
-	private String[] mActionLiStrings={"ȫ��","������Ϣ"};
 
 	private ListView listview;
 	@Override
@@ -58,21 +62,27 @@ public class MainActivity extends ActionBarActivity implements TabListener {
 //			}
 //		});
 		
-		mActionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
-		mActionBar.addTab(mActionBar.newTab().setText("娱乐")  
-				.setTabListener(this));
-		mActionBar.addTab(mActionBar.newTab().setText("科技")  
-                .setTabListener(this));
-		mActionBar.addTab(mActionBar.newTab().setText("体育")  
-                .setTabListener(this));  
-		mActionBar.addTab(mActionBar.newTab().setText("搞笑")  
-				.setTabListener(this));  
-		mActionBar.addTab(mActionBar.newTab().setText("订阅")  
-				.setTabListener(this));  
-		mActionBar.addTab(mActionBar.newTab().setText("天地沙龙")  
-				.setTabListener(this));  
+		String path = getIntent().getStringExtra("com.m.Path");
+        
+        if (path == null) {
+            path = "";
+        }
+		
+//		mActionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
+//		mActionBar.addTab(mActionBar.newTab().setText("娱乐")  
+//				.setTabListener(this));
+//		mActionBar.addTab(mActionBar.newTab().setText("科技")  
+//                .setTabListener(this));
+//		mActionBar.addTab(mActionBar.newTab().setText("体育")  
+//                .setTabListener(this));  
+//		mActionBar.addTab(mActionBar.newTab().setText("搞笑")  
+//				.setTabListener(this));  
+//		mActionBar.addTab(mActionBar.newTab().setText("订阅")  
+//				.setTabListener(this));  
+//		mActionBar.addTab(mActionBar.newTab().setText("天地沙龙")  
+//				.setTabListener(this));  
 
-        listview.setAdapter(new SimpleAdapter(this, getData(),
+        listview.setAdapter(new SimpleAdapter(this, getData(path),
                 android.R.layout.simple_list_item_1, new String[] { "title" },
                 new int[] { android.R.id.text1 }));
         listview.setTextFilterEnabled(true);
@@ -89,30 +99,6 @@ public class MainActivity extends ActionBarActivity implements TabListener {
 		        startActivity(intent);
 			}
 		});
-	}
-
-	protected List<Map<String, Object>> getData() {
-        List<Map<String, Object>> myData = new ArrayList<Map<String, Object>>();
-        
-        addToMap(myData,"NineOldAndroids",Demos.class);
-        addToMap(myData,"ViewDraerLayout_YouTuBe",DragMainActivity.class);
-        addToMap(myData,"App_Msg",AppMsgActivity.class);
-        addToMap(myData,"Drawer_Arrow",DrawerArrowSample.class);
-        addToMap(myData,"MessageBar",SampleActivity.class);
-        addToMap(myData,"Styled_Dialog",MyActivity.class);
-        addToMap(myData,"Nifty_Dialog_Effect",com.gitonway.lee.niftymodaldialogeffects.MainActivity.class);
-        addToMap(myData,"Material_Dialog",com.example.materialdialog.MyActivity.class);
-        
-
-        return myData;
-    }
-
-    private void addToMap(List<Map<String, Object>> myData,String title,Class class1) {
-    	  Map<String, Object> temp = new HashMap<String, Object>();
-          temp.put("title", title);
-          Intent intent = new Intent(getApplicationContext(), class1);
-          temp.put("intent", intent);
-          myData.add(temp);
 	}
 
 	
@@ -144,8 +130,93 @@ public class MainActivity extends ActionBarActivity implements TabListener {
 
 	@Override
 	public void onTabReselected(Tab arg0, FragmentTransaction arg1) {
-		// TODO Auto-generated method stub
 		
 	}
+	
+	protected List<Map<String, Object>> getData(String prefix) {
+        List<Map<String, Object>> myData = new ArrayList<Map<String, Object>>();
+
+        Intent mainIntent = new Intent(Intent.ACTION_MAIN, null);
+        mainIntent.addCategory("com.m.rabbit.example");
+
+        PackageManager pm = getPackageManager();
+        List<ResolveInfo> list = pm.queryIntentActivities(mainIntent, 0);
+
+        if (null == list)
+            return myData;
+
+        String[] prefixPath;
+        String prefixWithSlash = prefix;
+        
+        if (prefix.equals("")) {
+            prefixPath = null;
+        } else {
+            prefixPath = prefix.split("/");
+            prefixWithSlash = prefix + "/";
+        }
+        
+        int len = list.size();
+        
+        Map<String, Boolean> entries = new HashMap<String, Boolean>();
+
+        for (int i = 0; i < len; i++) {
+            ResolveInfo info = list.get(i);
+            CharSequence labelSeq = info.loadLabel(pm);
+            String label = labelSeq != null
+                    ? labelSeq.toString()
+                    : info.activityInfo.name;
+            
+            if (prefixWithSlash.length() == 0 || label.startsWith(prefixWithSlash)) {
+                
+                String[] labelPath = label.split("/");
+
+                String nextLabel = prefixPath == null ? labelPath[0] : labelPath[prefixPath.length];
+
+                if ((prefixPath != null ? prefixPath.length : 0) == labelPath.length - 1) {
+                    addItem(myData, nextLabel, activityIntent(
+                            info.activityInfo.applicationInfo.packageName,
+                            info.activityInfo.name));
+                } else {
+                    if (entries.get(nextLabel) == null) {
+                        addItem(myData, nextLabel, browseIntent(prefix.equals("") ? nextLabel : prefix + "/" + nextLabel));
+                        entries.put(nextLabel, true);
+                    }
+                }
+            }
+        }
+
+        Collections.sort(myData, sDisplayNameComparator);
+        
+        return myData;
+    }
+
+    private final static Comparator<Map<String, Object>> sDisplayNameComparator =
+        new Comparator<Map<String, Object>>() {
+        private final Collator   collator = Collator.getInstance();
+
+        public int compare(Map<String, Object> map1, Map<String, Object> map2) {
+            return collator.compare(map1.get("title"), map2.get("title"));
+        }
+    };
+
+    protected Intent activityIntent(String pkg, String componentName) {
+        Intent result = new Intent();
+        result.setClassName(pkg, componentName);
+        return result;
+    }
+    
+    protected Intent browseIntent(String path) {
+        Intent result = new Intent();
+        result.setClass(this, MainActivity.class);
+        result.putExtra("com.m.Path", path);
+        return result;
+    }
+
+    protected void addItem(List<Map<String, Object>> data, String name, Intent intent) {
+        Map<String, Object> temp = new HashMap<String, Object>();
+        temp.put("title", name);
+        temp.put("intent", intent);
+        data.add(temp);
+    }
 
 }

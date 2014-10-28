@@ -1,4 +1,5 @@
 <com.example.drag.DragLayout
+    android:clickable="true"
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:orientation="vertical"
         android:layout_width="match_parent"
